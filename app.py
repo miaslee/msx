@@ -1,7 +1,7 @@
 
 from functools import wraps
 from flask import Flask, request, jsonify
-from flask_cors import CORS
+
 from cachetools import TTLCache
 import lib2
 import json
@@ -10,6 +10,8 @@ from datetime import datetime, timedelta
 import pytz
 import os
 from concurrent.futures import ThreadPoolExecutor
+from flask_cors import CORS, cross_origin
+
 
 app = Flask(__name__)
 CORS(app)
@@ -71,7 +73,8 @@ async def fetch_all_data(uid, region):
 def sync_fetch_all_data(uid, region):
     return asyncio.run(fetch_all_data(uid, region))
 
-@app.route('/cloud/accountinfo')
+@app.route('/cloud/accountinfo', methods=["GET", "OPTIONS"])
+@cross_origin()  # fuerza CORS en esta ruta (además de CORS(app))
 @cached_endpoint()
 def get_account_info():
     region = request.args.get('region')
