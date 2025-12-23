@@ -11,9 +11,14 @@ MAIN_KEY = base64.b64decode('WWcmdGMlREV1aDYlWmNeOA==')
 MAIN_IV = base64.b64decode('Nm95WkRyMjJFM3ljaGpNJQ==')
 RELEASEVERSION = "OB51"
 USERAGENT = "Dalvik/2.1.0 (Linux; U; Android 13; CPH2095 Build/RKQ1.211119.001)"
-SUPPORTED_REGIONS = ["SAC"]
+SUPPORTED_REGIONS = ["SAC", "BR"]
 ACCOUNTS = {
     'SAC': "uid=4258918738&password=D4E4B1C5C976ED7C8DDE0193947BF48F109D529C3F6CC7EF8F13A75349F24E38"
+'SAC': "uid=4329614264&password=OFFLINE-YSRGMVISE",
+'SAC': "uid=4329614294&password=OFFLINE-QBSO15R5X",
+'BR': "uid=4329623275&password=OFFLINE-QLX2K1WDO"",
+'BR': "uid=4329623326&password=OFFLINE-E6GZ8ZV0W",
+'BR': "uid=4329623356&password=OFFLINE-SNBYDBMXQ",
 }
 
 async def json_to_proto(json_data: str, proto_message: message.Message) -> bytes:
