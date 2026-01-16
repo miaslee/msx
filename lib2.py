@@ -9,7 +9,7 @@ import base64
 # Constants for encryption and API configuration
 MAIN_KEY = base64.b64decode('WWcmdGMlREV1aDYlWmNeOA==')
 MAIN_IV = base64.b64decode('Nm95WkRyMjJFM3ljaGpNJQ==')
-RELEASEVERSION = "OB51"
+RELEASEVERSION = "OB52"
 USERAGENT = "Dalvik/2.1.0 (Linux; U; Android 13; CPH2095 Build/RKQ1.211119.001)"
 SUPPORTED_REGIONS = ["SAC"]
 ACCOUNTS = {
@@ -20,8 +20,7 @@ ACCOUNTS = {
 async def json_to_proto(json_data: str, proto_message: message.Message) -> bytes:
     """Convert JSON data to a protobuf message and serialize it."""
     json_format.ParseDict(json.loads(json_data), proto_message)
-    return proto_message.SerializeToString()
-
+    return proto_message.SerializeToString()sa
 def pad(text: bytes) -> bytes:
     """Pad text to align with AES block size."""
     padding_length = AES.block_size - (len(text) % AES.block_size)
