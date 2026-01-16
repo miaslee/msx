@@ -19,7 +19,8 @@ ACCOUNTS = {
 async def json_to_proto(json_data: str, proto_message: message.Message) -> bytes:
     """Convert JSON data to a protobuf message and serialize it."""
     json_format.ParseDict(json.loads(json_data), proto_message)
-    return proto_message.SerializeToString()sa
+    return proto_message.SerializeToString()
+
 def pad(text: bytes) -> bytes:
     """Pad text to align with AES block size."""
     padding_length = AES.block_size - (len(text) % AES.block_size)
