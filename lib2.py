@@ -14,7 +14,7 @@ USERAGENT = "Dalvik/2.1.0 (Linux; U; Android 13; CPH2095 Build/RKQ1.211119.001)"
 SUPPORTED_REGIONS = ["SAC"]
 ACCOUNTS = {
    
-'SAC': "uid=4409219155&password=FF2024_FV5J9_BLACK_APIs_THE4E"
+'SAC': "uid=4409219296&password=FF2024_HA9SD_BLACK_APIs_W4MI1"
 }
 
 async def json_to_proto(json_data: str, proto_message: message.Message) -> bytes:
